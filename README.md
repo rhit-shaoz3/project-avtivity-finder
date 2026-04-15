@@ -1,9 +1,9 @@
 # Activity-finder
 
 ## Name
-Mengpang Xing
-Grace He
-Yas’lyn Mohammed
+Mengpang Xing,
+Grace He,
+Yas’lyn Mohammed,
 Jason Shao
 
 ## Objective
