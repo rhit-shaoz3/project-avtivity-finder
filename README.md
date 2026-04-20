@@ -35,3 +35,22 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+
+# Heroku Deployment
+- Pending
+
+
+
+## Communication
+For the remainder of the class, our team agrees to the following communication and decision-making rules:
+- **Primary channel:** We use Slack/Imessage group chat for day-to-day communication.
+- **Response time:** Each member responds within 24 hours on weekdays.
+- **Meetings:** We meet at least once per week and post a short agenda beforehand.
+- **Task tracking:** We track work using GitHub Issues and assign owners + due dates.
+- **Decision-making:** We aim for consensus first; if blocked, majority vote decides.
+- **Code review:** All pull requests require at least one teammate review before merge.
+- **Respect & accountability:** We communicate respectfully, follow through on commitments, and notify the team early if timelines slip.
+
+
