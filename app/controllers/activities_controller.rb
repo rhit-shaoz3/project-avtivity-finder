@@ -1,9 +1,16 @@
 class ActivitiesController < ApplicationController
-  before_action :set_activity, only: %i[ show edit update destroy ]
+  before_action :require_login, :set_activity, only: %i[ show edit update destroy ]
+  before_action :set_activity, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_activity!, only: [:edit, :update, :destroy]
+
+  def authorize_activity!
+    redirect_to root_path, alert: "Not authorized" unless @activity.user == current_user
+  end
 
   # GET /activities or /activities.json
   def index
     @activities = Activity.all
+    # @activities = current_user.activities
   end
 
   # GET /activities/1 or /activities/1.json
@@ -21,16 +28,13 @@ class ActivitiesController < ApplicationController
 
   # POST /activities or /activities.json
   def create
-    @activity = Activity.new(activity_params)
+    # @activity = Activity.new(activity_params)
+    @activity = current_user.activities.build(activity_params)
 
-    respond_to do |format|
-      if @activity.save
-        format.html { redirect_to @activity, notice: "Activity was successfully created." }
-        format.json { render :show, status: :created, location: @activity }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @activity.errors, status: :unprocessable_entity }
-      end
+    if @activity.save
+      redirect_to @activity
+    else
+      render :new
     end
   end
 

@@ -8,3 +8,41 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+ 
+/* Auth Pages */
+.auth-container {
+  max-width: 500px;
+  margin: 60px auto;
+}
+
+.auth-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f1f1f1;
+}
+
+.auth-title {
+  text-align: center;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.auth-links {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.auth-links a {
+  text-decoration: none;
+}
+
+.form-label {
+  font-weight: 500;
+}
+
+.btn-auth {
+  width: 100%;
+  margin-top: 12px;
+}

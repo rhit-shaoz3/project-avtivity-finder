@@ -26,6 +26,10 @@
 
   <body>
     <div class="container my-4">
+      <% if logged_in? %>
+        Logged in as <%= current_user.name %>
+        <%= button_to "Logout", logout_path, method: :delete %>
+      <% end %>
       <% if notice.present? %>
         <p class="alert alert-success"><%= notice %></p>
       <% end %>
