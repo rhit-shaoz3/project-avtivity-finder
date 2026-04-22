@@ -2,7 +2,26 @@ require "test_helper"
 
 class ActivitiesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @activity = activities(:one)
+    # @activity = activities(:one)
+
+    @user = User.create!(
+      name: "Test User",
+      email: "test@example.com",
+      password: "password",
+      password_confirmation: "password"
+    )
+
+    @activity = Activity.create!(
+      title: "Running",
+      city: "Seattle",
+      event_date: Date.today,
+      user: @user
+    )
+
+    post login_path, params: {
+      email: @user.email,
+      password: "password"
+    }
   end
 
   test "should get index" do

@@ -1,8 +1,17 @@
 require "test_helper"
 
 class ActivityTest < ActiveSupport::TestCase
+  def setup
+    @user = User.create!(
+      name: "Test User",
+      email: "user@example.com",
+      password: "password",
+      password_confirmation: "password"
+    )
+  end
+
   test "is valid with required fields" do
-    activity = Activity.new(title: "City Walk", city: "Seattle", event_date: Date.today)
+    activity = Activity.new(title: "City Walk", city: "Seattle", event_date: Date.today, user: @user)
 
     assert activity.valid?
   end
